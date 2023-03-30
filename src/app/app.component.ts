@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-store-Componente-Servicios';
+  imgParent ='my-store';
+  imgParentUrl = 'https://www.w3schools.com/howto/img_avatar.png'
+
+  onLoaded(img: string) {
+    console.log('log padre', img);
+  }
 }

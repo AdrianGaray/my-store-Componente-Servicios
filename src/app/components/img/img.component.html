@@ -1,0 +1,19 @@
+<p>img works!</p>
+<h1>{{ img}}</h1>
+
+<img width="200" [src]="img" *ngIf="img; else elseImg">
+<ng-template #elseImg> <!-- Validar si la imagen esta en vacio-->
+  <img src="./assets/images/default.png" alt="">
+</ng-template>
+
+<!-- Validar si la imagen es Nula-->
+<img width="200" (error)="imgError()" [src]="img2" *ngIf="img2; else elseImg">
+<ng-template #elseImg>
+  <img [src]="imageDefault" alt="">
+</ng-template>
+
+<!-- Avisaler al padre cuando se cargo todo correctamente -->
+<img width="200" (load)="imgLoaded()" (error)="imgError()" [src]="img2" *ngIf="img2; else elseImg">
+<ng-template #elseImg>
+  <img [src]="imageDefault" alt="">
+</ng-template>
